@@ -11,6 +11,7 @@ public class Leetcode {
 		
 		int[] arr = {3,3};
 		
+		
 		System.out.println(Arrays.toString(twoSum(arr,6)));
 		
 	}
@@ -37,6 +38,7 @@ public class Leetcode {
 		Output: [0,1]
 
 	 */
+	//Order of O(n2)
 	public int[] twoSum(int[] num, int target) {
 		
 		
