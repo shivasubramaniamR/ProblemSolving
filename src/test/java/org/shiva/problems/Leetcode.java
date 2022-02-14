@@ -10,12 +10,16 @@ public class Leetcode {
 	@Test
 	public void runner() {
 		
-		int[] arr = {2,7,11,15};
+		int[] arr = {11,7,2,45,15,6,36};
 		
 		
-		System.out.println(Arrays.toString(twoSum(arr,9)));
-		System.out.println(Arrays.toString(twoSumwithOn(arr,9)));
-		System.out.println(Arrays.toString(twoSumsMap(arr,9)));
+//		System.out.println(Arrays.toString(twoSum(arr,9)));
+//		System.out.println(Arrays.toString(twoSumwithOn(arr,9)));
+//		System.out.println(Arrays.toString(twoSumsMap(arr,9)));
+		
+		System.out.println(secondlargestnlogn(arr));
+		System.out.println(secondlargestn2(arr));
+		
 	}
 	
 	
@@ -109,6 +113,44 @@ public class Leetcode {
 	}
 	
 	
+	//finding the second largest number in the array
+	
+	//O(nlogn)
+	
+	public int secondlargestnlogn(int[] num) {
+		
+		Arrays.sort(num);
+		
+			
+		return num[num.length-2];
+	}
+	
+	//O(n2)
+	
+	public int secondlargestn2(int[] num) {
+		
+		int largest=0,secondlargest=0;
+		
+		for(int i=0;i<num.length;i++) {
+			
+			largest = Math.max(largest, num[i]);
+		}
+		
+		for (int i=0;i<num.length;i++) {
+			
+			if(num[i]!=largest) {
+				secondlargest = Math.max(secondlargest, num[i]);
+			}
+		}
+		
+		
+		return secondlargest;
+	}
+	
+	
+	
 	
 
 }
+
+
