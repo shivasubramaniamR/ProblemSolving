@@ -10,7 +10,7 @@ public class Leetcode {
 	@Test
 	public void runner() {
 		
-		int[] arr = {11,7,2,45,15,6,36};
+		int[] arr = {11,7,2,45,15,6,36,63,82};
 		
 		
 //		System.out.println(Arrays.toString(twoSum(arr,9)));
@@ -19,6 +19,7 @@ public class Leetcode {
 		
 		System.out.println(secondlargestnlogn(arr));
 		System.out.println(secondlargestn2(arr));
+		System.out.println(secondlargestn(arr));
 		
 	}
 	
@@ -148,6 +149,27 @@ public class Leetcode {
 	}
 	
 	
+	//O(n)
+	
+	public int secondlargestn(int[] num) {
+		
+		int first=0,second=0;
+		
+		for(int i=0;i<num.length;i++) {
+			
+			if(num[i]>first) {
+				second=first;
+				first=num[i];
+			}
+			
+			else if(num[i]>second && num[i]!=first) {
+				second=num[i];
+			}
+		}
+		
+		
+		return second;
+	}
 	
 	
 
