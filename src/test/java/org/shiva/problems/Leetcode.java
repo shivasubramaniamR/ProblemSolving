@@ -21,6 +21,9 @@ public class Leetcode {
 		System.out.println(secondlargestn2(arr));
 		System.out.println(secondlargestn(arr));
 		
+		
+		System.out.println(largestnumberinarray(arr));
+		
 	}
 	
 	
@@ -169,6 +172,22 @@ public class Leetcode {
 		
 		
 		return second;
+	}
+	
+	
+	// find the largest number in array
+	// O(n) 
+	
+	
+	public int largestnumberinarray(int[] num) {
+		int largest=0;
+		
+		for (int i=0;i<num.length;i++) {
+			
+			largest = Math.max(largest, num[i]);
+		}
+		
+		return largest;
 	}
 	
 	
