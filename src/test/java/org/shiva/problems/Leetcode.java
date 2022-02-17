@@ -17,12 +17,14 @@ public class Leetcode {
 //		System.out.println(Arrays.toString(twoSumwithOn(arr,9)));
 //		System.out.println(Arrays.toString(twoSumsMap(arr,9)));
 		
-		System.out.println(secondlargestnlogn(arr));
-		System.out.println(secondlargestn2(arr));
-		System.out.println(secondlargestn(arr));
-		
+//		System.out.println(secondlargestnlogn(arr));
+//		System.out.println(secondlargestn2(arr));
+//		System.out.println(secondlargestn(arr));
+//		
 		
 		System.out.println(largestnumberinarray(arr));
+		
+		System.out.println(largestnumberOn2(arr));
 		
 	}
 	
@@ -176,6 +178,31 @@ public class Leetcode {
 	
 	
 	// find the largest number in array
+	
+	
+	//O(n2) using bubble sort
+	
+	public int largestnumberOn2(int[] num) {
+		
+		int temp=0;
+		for(int i=0;i<num.length-1;i++) {
+			
+			for (int j=0;j<num.length-1-i;j++) {
+				
+				if(num[j]>num[j+1]) {
+					temp = num[j];
+					num[j] = num[j+1];
+					num[j+1] = temp;
+				}
+			}
+		}
+		
+		System.out.println(Arrays.toString(num));
+		
+		return num[num.length-1];
+	}
+	
+	
 	// O(n) 
 	
 	
